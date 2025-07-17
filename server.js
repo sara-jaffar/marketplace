@@ -5,9 +5,11 @@ const app = express();
 const mongoose = require('mongoose');
 const methodOverride = require("method-override");
 const morgan = require("morgan");
-const session = require('express-session')
-const MongoStore = require('connect-mongo')
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
+const path = require('path');
 const authController = require("./controllers/auth.js");
+const listingController = require('./controllers/listing.js');
 const isSignedIn = require("./middleware/is-signed-in.js");
 const passUserToView = require("./middleware/pass-user-to-view.js");
 
@@ -20,6 +22,7 @@ mongoose.connection.on('connected', () => {
 })
 
 // MIDDLEWARE 
+app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use(morgan('dev'));
@@ -38,6 +41,7 @@ app.use(passUserToView);
 
 // ROUTES 
 app.use("/auth", authController);
+app.use("/listings", listingController)
 
 app.get("/vip-lounge", isSignedIn, (req, res) => {
   res.send(`Welcome to the party ${req.session.user.username}.`);

@@ -1,0 +1,34 @@
+body {
+    background-color: cornsilk;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+}
+
+.listing-img {
+    width: 50vw;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px
+}
+
+li{
+    list-style: none;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+}
+
+#edit-button {
+    width: 90vw;
+}

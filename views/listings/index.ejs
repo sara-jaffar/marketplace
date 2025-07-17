@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>All the Listings</title>
+</head>
+<body>
+    <h1>Marketplace Listings</h1>
+
+    <ul>
+        <% foundListings.forEach((listing) => { %>
+            <li>
+                <a href="/listings/<%= listing._id %>"><h2><%= listing.title %></h2></a>
+                <p><%= listing.description %></p>
+                <p><strong><%= listing.price %> BHD</strong></p>
+                <img src="<%= listing.image %>" class="listing-img" alt="Image of <%= listing.title %>" />
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>
