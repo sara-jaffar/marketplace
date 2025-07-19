@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up</title>
-  </head>
-  <body>
-    <h1>Create a new account!</h1>
+<%- include('../partials/head') %>
+
+    <h1 class="text-center">Create a new account!</h1>
     <form action="/auth/sign-up" method="POST">
       <label for="username">Username:</label>
       <input type="text" name="username" id="username" />
