@@ -7,7 +7,7 @@ const upload = require('../config/multer')
 
 // VIEW NEW LISTING FORM
 router.get('/new', isSignedIn, (req, res) => {
-    res.render('listings/new.ejs')
+    res.render('listings/news.ejs')
 })
 
 // POST FORM DATA TO DATABASE
